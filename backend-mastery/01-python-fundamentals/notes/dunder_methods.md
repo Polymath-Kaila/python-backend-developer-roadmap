@@ -80,7 +80,8 @@ def __repr__(self):
 ## 5.__getitem__(self,index) -indexing and slicing
 its called when we run:  
    + obj[0]
-   + obj[2:50]
+   + obj[2:50].  
+
 using the list in the len method:  
 
 ```python
@@ -113,7 +114,7 @@ for row in table:
     ['Godfrey'18]
     """
 ```
-
+------------------------------------------------------------------------------------
 
 
 
