@@ -62,23 +62,22 @@ So I'll behave accordingly."
 ## How Django QuerySet Uses Protocols
  
 ### 1.QuerySet implements __len__
-  This allows:
-  ```python
-  len(User.objects.all())
+This allows:
+```python
+len(User.objects.all())
   ```
-  To return the number of rows.
-  Internally Django does something like: 
- ```python
+To return the number of rows.
+Internally Django does something like: 
+```python
   def __len__(self):
     return self.count()
     # count() triggers a SELECT COUNT(*) FROM...
-
 ```
-    So when we do:
+So when we do:
 ```python 
     if qs:
 ```
-    Django actually uses the length:
+Django actually uses the length:
 
 
 ```python
