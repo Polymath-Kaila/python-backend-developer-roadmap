@@ -26,12 +26,12 @@ Its to say:
    -----------------------------------------------------------------------------------
 
 ### 2. Protocols are BEHAVIOUR contracts
-    They say:  
-    " If it walks like a duck and quacks like a duck...its a duck."  
-    Python doesn't care what class you inherit from,  
-    Python cares whether you implement the right behavior.
+They say:  
+" If it walks like a duck and quacks like a duck...its a duck."  
+Python doesn't care what class you inherit from,  
+Python cares whether you implement the right behavior.
 
-    lets say we create:
+lets say we create:
 ```python
     class Numbers:
         def __len__(self):
@@ -39,9 +39,9 @@ Its to say:
         def __getitem__(self,index):
             return index * 2
 ```
-    EVEN THOUGH this is not a list...  
+EVEN THOUGH this is not a list...  
 
-    Python treats it exactly like one:
+Python treats it exactly like one:
 ```python
     nums = Number()
     len(nums)      # 10
@@ -50,13 +50,13 @@ Its to say:
     for n in nums:
         print(n) # iteration works
 ```
-    We did not write any array class.  
-    we didn't inherit from list.  
-    We didn't inherit from sequence.  
+We did not write any array class.  
+we didn't inherit from list.  
+We didn't inherit from sequence.  
 
-    But python says: 
-    "you implement the sequence protocol.  
-    So I'll behave accordingly."
+But python says: 
+"you implement the sequence protocol.  
+So I'll behave accordingly."
 
 ------------------------------------------------------------------------------------
 ## How Django QuerySet Uses Protocols
