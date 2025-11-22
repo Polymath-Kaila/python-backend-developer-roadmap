@@ -29,27 +29,27 @@ Its to say:
     They say:  
     " If it walks like a duck and quacks like a duck...its a duck."  
     Python doesn't care what class you inherit from,  
-    Python cares whether you implement the right behavior.  
+    Python cares whether you implement the right behavior.
 
     lets say we create:
-    ```python
+```python
     class Numbers:
         def __len__(self):
             return 10
         def __getitem__(self,index):
             return index * 2
-    ```
+```
     EVEN THOUGH this is not a list...  
 
     Python treats it exactly like one:
-    ```python
+```python
     nums = Number()
     len(nums)      # 10
     nums(3)        # 6 since we index of then multiply by 2
     nums(1:5)      # slicing works automatically
     for n in nums:
         print(n) # iteration works
-    ```
+```
     We did not write any array class.  
     we didn't inherit from list.  
     We didn't inherit from sequence.  
@@ -68,20 +68,23 @@ Its to say:
   ```
   To return the number of rows.
   Internally Django does something like: 
-  ```python
+ ```python
   def __len__(self):
     return self.count()
     # count() triggers a SELECT COUNT(*) FROM...
 
-   ```
+```
     So when we do:
-    ```python 
+```python 
     if qs:
-    ```
+```
     Django actually uses the length:
-    ```python
+
+
+```python
     __bool__ = __len__
-    ```
+```
+    
 
 --------------------------------------------------------------------------------------
 ### 2.QuerySet implements __getitem__
