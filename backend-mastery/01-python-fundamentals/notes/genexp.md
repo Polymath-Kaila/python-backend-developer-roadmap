@@ -1,7 +1,7 @@
 # Generator Expressions (genexp)
-Same syntax as listComps, but uses parentesis() instead of square parenthesis []:  
+Same syntax as listComps, but uses parenthesis() instead of square parenthesis []:  
 
-They produce one item at a time (`lazy`) --> doeas not store full data in memory.
+They produce one item at a time (`lazy`) - does not store full data in memory.
 
 Generally: 
 ```python
