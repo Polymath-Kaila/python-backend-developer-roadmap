@@ -1,7 +1,8 @@
 # Hash maps in python
 A hash map or as called in python strictly as a `hash table` is a key-value data structure.  
 Take objects in javascript, they store key-value objects' elements using curly brackets.  
-That is the exact way hash tables in python dictionaries behave. 
+That is the exact way hash tables in python dictionaries behave.  
+
 Its built from:  
 + A big array object
 + A hash function which turns keys into numbers
@@ -28,7 +29,7 @@ value = dict["name","age","major","skill"]
 #### step2
 python runs the `keys` through the `hash function`:
 ```python
-has("name",*"skill")
+hash("name",*"skill")
 "name"= 912223344
 "age" = 912223345
 "major" = 912223346
