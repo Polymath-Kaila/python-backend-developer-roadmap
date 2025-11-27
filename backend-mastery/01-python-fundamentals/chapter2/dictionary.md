@@ -206,3 +206,97 @@ print(settings["debug"])  # True
 print(settings["host"])   # 'localhost'
 ```
 
+---------------------------------------------------- 
+## 7.Dictionary Views & Practical Dict Operations
+
+Dictionary views (`keys()`, `values()`, `items()`) are **dynamic, set-like, lightweight views** into a dictionary’s data.  
+They are NOT lists — they update automatically whenever the dictionary changes.
+
+---
+
+#### Dictionary Views (Keys, Values, Items)
+
+###  KeysView
+```python
+d = {"id": 1, "name": "Kaila"}
+keys = d.keys()
+# dict_keys(['id', 'name'])
+d.values() # dict_values(1,'kaila')
+```
+### ItemsView
+```python
+d.items() #dict_items([('id',1),('name','kaila')])
+
+```
+### Views are live(auto-update)
+```python
+d = {"a": 1}
+k = d.keys()
+d["b"] = 2
+print(k)      # dict_keys(['a', 'b'])
+```
+### Dictionary Views set operations
+works on .keys() and .items().  
+```python
+d1 = {"a": 1, "b": 2}
+d2 = {"b": 9, "c": 3}
+
+d1.keys() & d2.keys()   # {'b'}
+d1.keys() | d2.keys()   # {'a', 'b', 'c'}
+d1.keys() - d2.keys()   # {'a'}
+```
+Items example:  
+```python
+d1 = {"a": 1, "b": 2}
+d2 = {"b": 2, "c": 3}
+
+d1.items() & d2.items()   # {('b', 2)}
+```
+### Useful in:
++ configs
++ API fields
++ database schemas
++ permission sets
++ diff between two envs
+
+### Backend Applications
+#### Comparing JSON response fields
+```python
+expected = {"id", "name", "email"}
+actual = response.keys()
+
+missing = expected - actual
+extra   = actual - expected
+```
+#### Compare configs
+```python
+changed = new_conf.items() - old_conf.items()
+```
+#### Validate request body
+```python
+allowed  = {"email", "password"}
+incoming = body.keys()
+
+extra_fields = incoming - allowed
+if extra_fields:
+    raise ValidationError(extra_fields)
+```
+#### Check schema drift
+```python
+old = {"id": 1, "name": "Kaila", "email": "k@x.com"}
+new = {"id": 1, "name": "Kaila M.", "status": "active"}
+
+removed = old.keys() - new.keys()
+added   = new.keys() - old.keys()
+changed = old.items() - new.items()
+```
+### Dict merging (later on )
+
+
+### Summary
+- dict views are dynamic: keys(), values(), items()
+- keys() & items() support set ops (intersection, union, difference)
+- dict merge operator (| and |=)
+- .get(), .setdefault(), .pop() patterns
+- subset and filtered dict creation using comprehensions
+- extremely useful for validating API data, configs, schemas, permissions
