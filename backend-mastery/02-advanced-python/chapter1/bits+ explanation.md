@@ -140,3 +140,13 @@ Encoding happens only when we cross the boundary:
 + writing to file
 + sending over networks
 + calling `.encode()`
+
+#### Generally
++ Bits/bytes are physical reality
++ Hex / binary / octal are just representations
++ Characters are numbers (code points)
++ Unicode defines meaning, not storage
++ UTF-8 defines how code points become bytes
++ `bytes` = encoded representation
++ `str` = characters / code points
++ Both live in memory as bytes, but at different abstraction layers
