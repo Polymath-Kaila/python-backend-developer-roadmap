@@ -16,17 +16,17 @@ git clone https://github.com/Polymath-Kaila/python-backend-developer-roadmap
 ### 2. `git status`
 This command:  
 + Shows what git sees
-+ Tells you whats staged,unstaged,untracked
++ Tells us whats staged,unstaged,untracked
 When to use:  
 + Constantly (seriusly).  
-If you're confused `git status`.  
+If confused `git status`.  
 ```bash
 git status
 ```
 ---------------------------------
 
 ### 3. `git add`
-This command:  
+This command.    
 + Moves changes from working directory to staging area
 ```bash
 git add file.py # stage one file
