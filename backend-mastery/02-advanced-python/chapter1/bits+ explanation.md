@@ -16,7 +16,7 @@ Hexadecimal:  0x41
 #### Characters before Unicode
 Originally computers used ASCII (American Standard for Information Interchange):  
 + It was 8 bits thats 2^8 = 256 
-+ 1byte was repr by 7bits so max bytes = 2^7 = 127
++ 1byte was repr by 7bits so max bytes = 2^7 = 127.  
 Take a look of ASCII table:  
 
 |Numbers  | character |
@@ -91,7 +91,7 @@ Example:
 Character `A`.  
   + code point: U+0041(65)
   + UTF-8 bytes: `0x41`
-  + Binary: 01000001
+  + Binary: 01000001  
 Character: `🔥`
   + code point: U+1F525
   + utf-8 bytes: `0xF0 0x9F 0x94 0xA5`
